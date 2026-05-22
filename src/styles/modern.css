@@ -1,0 +1,473 @@
+.modern-page {
+  min-height: 100vh;
+  background: #fffceb;
+  color: #101b94;
+  overflow-x: hidden;
+}
+
+/* Hero */
+
+.modern-hero {
+  position: relative;
+  height: 490px;
+  overflow: hidden;
+}
+
+.modern-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.modern-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.modern-hero__title {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  max-width: 1200px;
+  text-align: center;
+  font-family: "Boozy Regular", sans-serif;
+  font-size: 118px;
+  line-height: 0.9;
+  color: #ffffff;
+  z-index: 2;
+  letter-spacing: 4px;
+}
+
+.modern-intro {
+  width: min(1188px, 90vw);
+  margin: 60px auto 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #09188e;
+}
+
+.modern-intro p {
+  margin: 0 0 24px;
+}
+
+.modern-divider {
+  width: min(1200px, 92vw);
+  margin: 75px auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.modern-divider img {
+  width: 200%;
+  max-width: 5100px;
+  height: auto;
+}
+
+.modern-section-title {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%) translateY(-35%);
+  margin: -150px 0 70px;
+  font-family: "Boozy Regular", sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  color: #101b94;
+  text-align: center;
+}
+
+.modern-section-title-people {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-51%) translateY(-25%);
+  margin: -150px 0 70px;
+  font-family: "Boozy Regular", sans-serif;
+  font-size: 58px;
+  line-height: 1;
+  color: #101b94;
+  text-align: center;
+}
+
+/* Map */
+
+.modern-map-section {
+  width: min(1600px, 98vw);
+  margin: 10px auto 0;
+}
+
+.modern-map {
+  width: 100%;
+}
+
+.modern-map__image-wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modern-map__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.modern-map__place {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.modern-map__place--active {
+  z-index: 100;
+}
+
+.modern-map__pin {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 3px solid #101b94;
+  border-radius: 50%;
+  background: #fffceb;
+  color: #101b94;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.modern-map__pin:hover,
+.modern-map__place--active .modern-map__pin {
+  background: #101b94;
+  transform: scale(1.2);
+}
+
+.modern-map__pin span {
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  font-family: "Kosko Bold", sans-serif;
+  font-size: 16px;
+  color: #101b94;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modern-map__pin:hover span,
+.modern-map__place--active .modern-map__pin span {
+  opacity: 1;
+}
+
+/* карточка справа от точки */
+.modern-map__tooltip {
+  position: absolute;
+  left: calc(100% + 26px);
+  top: 50%;
+  width: 420px;
+  background: #101b94;
+  color: #fffceb;
+  border-radius: 30px;
+  padding: 28px 30px;
+  box-shadow: 0 18px 34px rgba(16, 27, 148, 0.22);
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-50%) translateX(-18px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.modern-map__place--active .modern-map__tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.modern-map__tooltip img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.modern-map__subtitle {
+  margin: 0 0 10px;
+  font-family: "Kosko Bold", sans-serif;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.modern-map__tooltip h3 {
+  margin: 0 0 16px;
+  font-family: "Boozy Outline", sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  color: #fffceb;
+}
+
+.modern-map__tooltip p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* People */
+
+.modern-people-section {
+  width: min(1450px, 94vw);
+  margin: 0px auto 120px;
+  overflow: visible;
+}
+
+/* Горизонтальная лента с портретами и раскрывающимся блоком */
+.modern-people-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  overflow: visible;
+}
+
+/* Портрет человека */
+.modern-person {
+  flex: 0 0 310px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: #101b94;
+}
+
+.modern-person img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+  border-radius: 28px;
+  box-shadow: 0 14px 28px rgba(16, 27, 148, 0.14);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.modern-person:hover img,
+.modern-person--active img {
+  transform: scale(1.03);
+  filter: brightness(0.88);
+}
+
+.modern-person span {
+  display: block;
+  margin-top: 14px;
+  font-family: "Kosko Bold", sans-serif;
+  font-size: 24px;
+  color: #101b94;
+}
+
+/* Синий блок, который раскрывается между фото */
+.modern-person-panel-inline {
+  flex: 0 0 540px;
+  width: 540px;
+  height: 310px;
+  min-height: 310px;
+  background: #101b94;
+  color: #fffceb;
+  border-radius: 32px;
+  box-sizing: border-box;
+  box-shadow: 0 18px 34px rgba(16, 27, 148, 0.2);
+  overflow: hidden;
+  position: relative;
+
+  animation: modernPanelUnfold 0.65s ease forwards;
+}
+
+.modern-person-panel-inline--closing {
+  animation: modernPanelFold 0.65s ease forwards;
+}
+
+.modern-person-panel-inline__content {
+  width: 460px;
+  min-width: 460px;
+  padding: 34px 40px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateX(-18px);
+  animation: modernPanelTextAppear 0.35s ease 0.32s forwards;
+}
+
+.modern-person-panel-inline--closing .modern-person-panel-inline__content {
+  animation: modernPanelTextDisappear 0.25s ease forwards;
+}
+
+.modern-person-panel-inline h3 {
+  margin: 0 0 10px;
+  font-family: "Boozy Outline", sans-serif;
+  font-size: 62px;
+  line-height: 1;
+  color: #fffceb;
+}
+
+.modern-person-panel-inline span {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Kosko Bold", sans-serif;
+  font-size: 24px;
+  color: #fffceb;
+}
+
+.modern-person-panel-inline p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fffceb;
+}
+
+@keyframes modernPanelUnfold {
+  from {
+    flex-basis: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    flex-basis: 540px;
+    width: 540px;
+    opacity: 1;
+  }
+}
+
+@keyframes modernPanelFold {
+  from {
+    flex-basis: 540px;
+    width: 540px;
+    opacity: 1;
+  }
+
+  to {
+    flex-basis: 0;
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes modernPanelTextAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modernPanelTextDisappear {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+}
+
+@media (max-width: 900px) {
+  .modern-people-track {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modern-person {
+    flex: 0 0 auto;
+    width: min(310px, 90vw);
+  }
+
+  .modern-person-panel-inline {
+    flex: 0 0 auto;
+    width: min(540px, 90vw);
+  }
+
+  @keyframes modernPanelUnfold {
+    from {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+      opacity: 0;
+    }
+
+    to {
+      width: min(540px, 90vw);
+      padding-left: 40px;
+      padding-right: 40px;
+      opacity: 1;
+    }
+  }
+}
+
+.modern-hero__title {
+  opacity: 0;
+  animation: modernHeroTitleFade 0.9s ease 0.2s forwards;
+}
+
+@keyframes modernHeroTitleFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 28px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 1100px) {
+  .modern-map {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-map__card {
+    width: min(680px, 90vw);
+    margin: 0 auto;
+  }
+
+  .modern-people__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .modern-hero__title {
+    font-size: 60px;
+  }
+
+  .modern-intro {
+    font-size: 17px;
+  }
+
+  .modern-section-title {
+    font-size: 46px;
+  }
+
+  .modern-people__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-person-info h3 {
+    font-size: 46px;
+  }
+}

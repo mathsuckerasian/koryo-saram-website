@@ -1,0 +1,88 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: #fffceb;
+}
+
+body {
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.home-hero {
+  background: #FFFCEB;
+}
+
+@font-face {
+  font-family: "Kosko Bold";
+  src: url("../assets/fonts/ofont.ru_Kosko (1).ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Boozy Outline";
+  src: url("../assets/fonts/ofont.ru_Boozy_Outline.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Boozy Regular";
+  src: url("../assets/fonts/ofont.ru_Boozy_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-header,
+.site-header__logo,
+.site-header__logo-link {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.kitchen-hero,
+.history-hero,
+.traditions-hero,
+.holidays-hero {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.kitchen-hero__bg,
+.kitchen-hero__overlay,
+.history-hero__bg,
+.history-hero__overlay,
+.traditions-hero__bg,
+.traditions-hero__overlay,
+.holidays-hero__bg,
+.holidays-hero__overlay {
+  opacity: 1 !important;
+  animation: none !important;
+}
