@@ -1,16 +1,17 @@
-import korea1 from "../assets/history/photos/korea-1.jpg";
-import korea2 from "../assets/history/photos/korea-2.jpg";
+import korea1 from "../assets/history/photos/korea-1.png";
+import korea2 from "../assets/history/photos/korea-2.png";
 
-import vladivostok1 from "../assets/history/photos/vladivostok-1.jpg";
-import vladivostok2 from "../assets/history/photos/vladivostok-2.jpg";
+import vladivostok1 from "../assets/history/photos/vladivostok-1.png";
+import vladivostok2 from "../assets/history/photos/vladivostok-2.png";
 
-import train1 from "../assets/history/photos/train-1.jpg";
-import train2 from "../assets/history/photos/train-2.jpg";
+import train1 from "../assets/history/photos/train-1.png";
+import train2 from "../assets/history/photos/train-2.png";
 
 import centralAsia1 from "../assets/history/photos/central-asia-1.png";
 import centralAsia2 from "../assets/history/photos/central-asia-2.png";
+import centralAsia3 from "../assets/history/photos/central-asia-3.png";
 
-import modern1 from "../assets/history/photos/modern-1.jpg";
+import modern1 from "../assets/history/photos/modern-1.png";
 
 export const historyPoints = [
   {

@@ -1,7 +1,13 @@
 import { useState } from "react";
+
 import suitcaseClosed from "../../assets/history/suitcase_closed.png";
 import suitcaseOpen from "../../assets/history/suitcase_open.png";
 import mapTall from "../../assets/history/maptall.png";
+
+import historyDecor from "../../assets/history/history_decor.png";
+import flowers from "../../assets/history/FLOWERS.png";
+import flowers2 from "../../assets/history/flowers2.png";
+
 import { historyPoints } from "../../data/historyPoints";
 
 export default function HistoryMap() {
@@ -17,7 +23,7 @@ export default function HistoryMap() {
           <div className="history-map__suitcase-wrap">
             <img
               src={isOpen ? suitcaseOpen : suitcaseClosed}
-              alt="Чемодан"
+              alt="Чемодан с историей корё-сарам"
               className="history-map__suitcase"
             />
 
@@ -32,60 +38,93 @@ export default function HistoryMap() {
             )}
           </div>
 
-          <div className="history-map__scroll">
-            <img
-              src={mapTall}
-              alt="Карта истории корё-сарам"
-              className="history-map__image"
-            />
+          {isOpen && (
+            <div className="history-map__scroll">
+              <img
+                src={mapTall}
+                alt="Карта маршрута истории корё-сарам"
+                className="history-map__image"
+              />
 
-            {historyPoints.map((point) => (
-              <button
-                key={point.id}
-                type="button"
-                className={`history-map__point history-map__point--${point.id} ${
-                  activePointId === point.id ? "history-map__point--active" : ""
-                }`}
-                style={{
-                  left: `${point.x}%`,
-                  top: `${point.y}%`,
-                }}
-                onClick={() => setActivePointId(point.id)}
-              >
-                <span>{point.label}</span>
-              </button>
-            ))}
-          </div>
+              {historyPoints.map((point) => (
+                <button
+                  key={point.id}
+                  type="button"
+                  className={`history-map__point ${
+                    activePointId === point.id
+                      ? "history-map__point--active"
+                      : ""
+                  }`}
+                  style={{
+                    left: `${point.x}%`,
+                    top: `${point.y}%`,
+                  }}
+                  onClick={() => setActivePointId(point.id)}
+                  aria-label={point.title}
+                >
+                  <span>{point.label}</span>
+                </button>
+              ))}
+
+              <img
+                src={historyDecor}
+                alt=""
+                className="history-map__decor"
+                aria-hidden="true"
+              />
+            </div>
+          )}
         </div>
 
         {isOpen && activePoint && (
-          <article key={activePoint.id} className="history-map__card">
-            <p className="history-map__years">{activePoint.years}</p>
+          <aside className="history-map__panel" key={activePoint.id}>
+            <div className="history-map__card-wrap">
+              <img
+                src={flowers}
+                alt=""
+                className="history-map__flower history-map__flower--left"
+                aria-hidden="true"
+              />
 
-            <h2>{activePoint.title}</h2>
+              <img
+                src={flowers2}
+                alt=""
+                className="history-map__flower history-map__flower--right"
+                aria-hidden="true"
+              />
 
-            <div className="history-map__text">
-              {activePoint.text.split("\n\n").map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
+              <article className="history-map__card">
+                <p className="history-map__years">{activePoint.years}</p>
+
+                <h2>{activePoint.title}</h2>
+
+                <div className="history-map__text">
+                  {activePoint.text.split("\n\n").map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
             </div>
 
             {activePoint.photos && activePoint.photos.length > 0 && (
               <div
                 className={`history-map__photos ${
-                  activePoint.photos.length === 1 ? "history-map__photos--single" : ""
+                  activePoint.photos.length === 1
+                    ? "history-map__photos--single"
+                    : ""
                 }`}
               >
                 {activePoint.photos.map((photo, index) => (
                   <img
                     key={index}
                     src={photo}
-                    alt={`${activePoint.title} ${index + 1}`}
+                    alt={`${activePoint.title}. Фото ${index + 1}`}
+                    className="history-map__photo"
                   />
                 ))}
               </div>
             )}
-          </article>
+          </aside>
         )}
       </div>
     </section>
