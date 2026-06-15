@@ -1,7 +1,7 @@
 import InnerPageHeader from "../components/layout/InnerPageHeader.jsx";
 import Footer from "../components/layout/Footer.jsx";
 
-import authorPhoto from "../assets/about/author-photo.jpg";
+import authorPhoto from "../assets/about/author-photo.png";
 import blueRectangle from "../assets/about/blue_rectangle.png";
 
 import "../styles/about.css";
