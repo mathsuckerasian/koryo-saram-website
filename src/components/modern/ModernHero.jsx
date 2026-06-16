@@ -9,7 +9,7 @@ export default function ModernHero() {
         <img src={heroBg} alt="" />
       </div>
 
-      <h1 className="modern-hero__title">Современные корё-сарам</h1>
+      <h1 className="modern-hero__title">Современные <br /> корё-сарам</h1>
     </section>
   );
 }

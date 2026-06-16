@@ -1,4 +1,4 @@
-import calligraphyPaper from "../../assets/home/calligraphypaper.png";
+import calligraphyPaper from "../../assets/language/paper.png";
 import brush from "../../assets/traditions/brush.png";
 import splash from "../../assets/home/splash.png";
 
@@ -17,12 +17,6 @@ export default function LanguageInfo() {
           src={calligraphyPaper}
           alt=""
           className="language-info__decor language-info__decor--paper1"
-        />
-
-        <img
-          src={splash}
-          alt=""
-          className="language-info__decor language-info__decor--splash"
         />
 
       <div className="language-info__content">

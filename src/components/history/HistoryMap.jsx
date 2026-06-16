@@ -108,11 +108,7 @@ export default function HistoryMap() {
 
             {activePoint.photos && activePoint.photos.length > 0 && (
               <div
-                className={`history-map__photos ${
-                  activePoint.photos.length === 1
-                    ? "history-map__photos--single"
-                    : ""
-                }`}
+                className={`history-map__photos history-map__photos--${activePoint.photos.length}`}
               >
                 {activePoint.photos.map((photo, index) => (
                   <img
